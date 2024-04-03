@@ -125,11 +125,11 @@ public class Convertidor extends javax.swing.JFrame {
        double fahrenheit;
       try{
       fahrenheit =Double.parseDouble(jtCelsius.getText())*9/5+32;
-     
-      //JOptionPane.showMessageDialog(rootPane, fahrenheit);
-      JOptionPane.showMessageDialog(rootPane, "grados fahrenheit : " + fahrenheit, "resultado", 1);
+   
+      JOptionPane.showMessageDialog(rootPane, "Grados fahrenheit : " + fahrenheit, "Resultado", 1);
       }catch(NumberFormatException e){
- JOptionPane.showMessageDialog(this, "Debe ingresar un valor numerico");
+          JOptionPane.showMessageDialog(rootPane,"Debe ingresar un valor numerico" , "Error ", 0);
+          
       }
     }//GEN-LAST:event_jbConvertirActionPerformed
 
