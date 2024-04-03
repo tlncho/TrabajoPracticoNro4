@@ -32,11 +32,9 @@ public class Convertidor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jDialog1 = new javax.swing.JDialog();
         jDialog2 = new javax.swing.JDialog();
+        jtCelsius = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jtCelsius = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jlFahrenheit = new javax.swing.JLabel();
         jbConvertir = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
@@ -72,14 +70,11 @@ public class Convertidor extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(51, 153, 255));
         jLabel2.setText("Convertidor");
 
+        jLabel3.setBackground(new java.awt.Color(255, 204, 0));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Ingrese los grados celsius");
 
-        jLabel4.setText("Grados Fahrenheit:");
-
-        jlFahrenheit.setText("...");
-
         jbConvertir.setBackground(new java.awt.Color(204, 255, 255));
-        jbConvertir.setForeground(new java.awt.Color(0, 0, 0));
         jbConvertir.setText("Convertir");
         jbConvertir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,39 +89,31 @@ public class Convertidor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtCelsius, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jlFahrenheit, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel3)
+                        .addGap(12, 12, 12)
+                        .addComponent(jtCelsius, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
+                        .addGap(123, 123, 123)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
+                        .addGap(128, 128, 128)
                         .addComponent(jbConvertir)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel3))
                     .addComponent(jtCelsius, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
                 .addComponent(jbConvertir)
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jlFahrenheit))
-                .addGap(47, 47, 47))
+                .addGap(0, 81, Short.MAX_VALUE))
         );
 
         pack();
@@ -136,11 +123,14 @@ public class Convertidor extends javax.swing.JFrame {
     private void jbConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConvertirActionPerformed
        double celsius = 0;
        double fahrenheit;
-      
+      try{
       fahrenheit =Double.parseDouble(jtCelsius.getText())*9/5+32;
-      jlFahrenheit.setText(String.valueOf(fahrenheit));
+     
       //JOptionPane.showMessageDialog(rootPane, fahrenheit);
       JOptionPane.showMessageDialog(rootPane, "grados fahrenheit : " + fahrenheit, "resultado", 1);
+      }catch(NumberFormatException e){
+ JOptionPane.showMessageDialog(this, "Debe ingresar un valor numerico");
+      }
     }//GEN-LAST:event_jbConvertirActionPerformed
 
     /**
@@ -184,9 +174,7 @@ public class Convertidor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JButton jbConvertir;
-    private javax.swing.JLabel jlFahrenheit;
     private javax.swing.JTextField jtCelsius;
     // End of variables declaration//GEN-END:variables
 }
