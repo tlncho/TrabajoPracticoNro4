@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -27,6 +30,8 @@ public class Convertidor extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jDialog1 = new javax.swing.JDialog();
+        jDialog2 = new javax.swing.JDialog();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jtCelsius = new javax.swing.JTextField();
@@ -34,12 +39,37 @@ public class Convertidor extends javax.swing.JFrame {
         jlFahrenheit = new javax.swing.JLabel();
         jbConvertir = new javax.swing.JButton();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ST-P\\Desktop\\Grados-Celsius-e1535471653864.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
+        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
+        jDialog2.getContentPane().setLayout(jDialog2Layout);
+        jDialog2Layout.setHorizontalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog2Layout.setVerticalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 204));
+        setResizable(false);
+
+        jLabel2.setBackground(new java.awt.Color(102, 255, 51));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 153, 255));
         jLabel2.setText("Convertidor");
 
         jLabel3.setText("Ingrese los grados celsius");
@@ -48,6 +78,8 @@ public class Convertidor extends javax.swing.JFrame {
 
         jlFahrenheit.setText("...");
 
+        jbConvertir.setBackground(new java.awt.Color(204, 255, 255));
+        jbConvertir.setForeground(new java.awt.Color(0, 0, 0));
         jbConvertir.setText("Convertir");
         jbConvertir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,14 +130,17 @@ public class Convertidor extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConvertirActionPerformed
-       double celsius;
+       double celsius = 0;
        double fahrenheit;
       
       fahrenheit =Double.parseDouble(jtCelsius.getText())*9/5+32;
       jlFahrenheit.setText(String.valueOf(fahrenheit));
+      //JOptionPane.showMessageDialog(rootPane, fahrenheit);
+      JOptionPane.showMessageDialog(rootPane, "grados fahrenheit : " + fahrenheit, "resultado", 1);
     }//GEN-LAST:event_jbConvertirActionPerformed
 
     /**
@@ -144,6 +179,8 @@ public class Convertidor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
